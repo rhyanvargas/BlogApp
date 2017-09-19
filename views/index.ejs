@@ -1,0 +1,14 @@
+<% include partials/header %>
+
+<h1>LIST OF ALL POSTS HERE</h1>
+
+<% blogs.forEach(function(blog){ %>
+ <div>
+  <h2> <%= blog.title %> </h2>
+  <small> <%= blog.created %> </small>
+  <img src="<%= blog.image %>">
+  <p> <%= blog.body %> </p>
+</div>
+<% });%>
+
+<% include partials/footer %>
