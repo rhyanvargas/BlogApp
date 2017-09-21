@@ -1,6 +1,28 @@
-<form action="/blogs" method="POST">
+<% include partials/header %>
+
+<form class='ui form' action="/blogs" method="POST">
+  <div class="field">
+    <label for="title"></label>
+    <input type="text" name="blog[title]" placeholder="Title of Blog Post...">
+  </div>
+  <div class="field">
+    <label for="image"></label>
+    <input type="text" name="blog[image]" placeholder="URL of image here...(ie. https://source.unsplash.com/700x400/?nature,water)">
+  </div>
+  <div class="field">
+    <label for="body"></label>
+    <input type="body" name="blog[body]" placeholder="Description of Blog Post...">
+    <!-- <textarea type="body" name="blog[body]" placeholder="Description of Blog Post..."></textarea> -->
+  </div>
+
+  <button class="ui button" type="submit">Create New Post</button>
+
+
+<!-- 
   <input type="text" name="title" placeholder="title..">
   <input type="text" name="imageURL" placeholder="imageURL..">
   <input type="text" name="body" placeholder="body..">
   <button> Submit! </button>
-</form>
+</form> -->
+
+<% include partials/footer %>
