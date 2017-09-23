@@ -1,4 +1,4 @@
-TECH STACK
+#TECH STACK
 =============
 **Databse: mongoDB**
 - *Object-modeling: mongoose*
@@ -8,7 +8,7 @@ TECH STACK
 **Frontend: HTML + CSS + Javscript**
 - *CSS Framework: SemanticUI*
 
-USING RESTful Routes for CRUD
+#USING RESTful Routes for CRUD
 =============
 
 name      |     url       |    verb     |   description
@@ -18,8 +18,15 @@ NEW       /campgrounds/new    GET        Shows form to create new campground
 CREATE    /campgrounds        POST       Add campground to Database
 SHOW      /campgrounds/:id    GET        Displays info about one campground
 
+#Edit/Update
+* Add Edit Route
+* Add Edit Form
+* Add Update Route
+* Add Update Form
+* Add Method-Override
 
-RANDOM LESSONS LEARNED
+
+#RANDOM LESSONS LEARNED
 =============
 - **Stick to using one style of quotes `" "` when setting attributes for html elements in ejs file** 
 ..Otherwise upon rendering, it will throw an error that will take forever to figure out!!!

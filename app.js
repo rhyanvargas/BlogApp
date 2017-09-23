@@ -59,13 +59,24 @@ app.get('/blogs/:id', (req,res)=>{
   // 1. Take in the id 
   // 2. Find the corresponding post
   // 3. Render the show template for that post
-  Blog.findById(req.params.id, (err,post)=>{
+  Blog.findById(req.params.id, (err,foundPost)=>{
     if (err) {
       res.redirect('/blogs');
     } else {
-      res.render('show', {post: post});
+      res.render('show', {post: foundPost});
     }
   })
+});
+
+// EDIT ROUTE
+app.get('/blogs/:id/edit', (req,res)=>{
+  Blog.findById(req.params.id, (err, foundPost)=>{
+    if (err) {
+      res.redirect('/blogs')
+    } else {
+      res.render('edit', {post: foundPost});
+    };
+  });
 });
 
 // SERVER

@@ -1,19 +1,19 @@
 <% include partials/header %>
 
 <div class="ui text container segment">
-  <div class="ui header huge">New Blog</div>
+  <div class="ui header huge">Edit: <%= post.title %></div>
   <form class='ui form' action="/blogs" method="POST">
     <div class="field">
       <label >Title</label>
-      <input type="text" name="post[title]" placeholder="Title of Post...">
+      <input type="text" name="post[title]" value="<%= post.title %>">
     </div>
     <div class="field">
       <label >Image</label>
-      <input type="text" name="post[image]" placeholder="URL of image here...(ie. https://source.unsplash.com/700x400/?nature,water)">
+      <input type="text" name="post[image]" value="<%= post.image %>">
     </div>
     <div class="field">
       <label >Content</label>
-      <textarea type="body" name="post[body]" placeholder="Description of Blog Post..."></textarea>
+      <textarea type="body" name="post[body]"><%= post.body %></textarea>
     </div>
 
     <button class="ui violet basic big button" type="submit">Create New Post</button>
