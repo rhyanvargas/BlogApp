@@ -11,7 +11,7 @@
             </div>
             <h2 class="header"><%= post.title %></h2>
             <small class="meta"><%= post.created %></small>
-            <p class="description"><%= post.body %></p>
+            <p class="description"><%= post.body.substring(0,100) %>...</p>
             
           </div>
           <a href="/blogs/<%= post._id%>">
