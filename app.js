@@ -35,7 +35,6 @@ app.get('/blogs', (req,res) =>{
   });
 });
 
-
 // CREATE
 app.post('/blogs', (req,res)=> {
   // create a blog object
@@ -53,6 +52,20 @@ app.post('/blogs', (req,res)=> {
 // SHOW NEW FORM
 app.get('/blogs/new', (req,res) =>{
   res.render('new');
+});
+
+// SHOW POST
+app.get('/blogs/:id', (req,res)=>{
+  // 1. Take in the id 
+  // 2. Find the corresponding post
+  // 3. Render the show template for that post
+  Blog.findById(req.params.id, (err,post)=>{
+    if (err) {
+      res.redirect('/blogs');
+    } else {
+      res.render('show', {post: post});
+    }
+  })
 });
 
 // SERVER

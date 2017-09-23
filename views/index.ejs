@@ -1,6 +1,6 @@
 <% include partials/header %>
 
-  <div class="ui header huge centered"><h1>Rhyan's Blog</h1></div>
+  <div class="ui header huge centered"><h1>Rhyan's Blog</h1> </div>
     <div class="ui cards">
       <% posts.forEach( (post)=> { %>
 
@@ -14,7 +14,7 @@
             <p class="description"><%= post.body %></p>
             
           </div>
-          <a href="/blogs">
+          <a href="/blogs/<%= post._id%>">
               <div class="ui bottom attached button">
                 <!-- <i class="add icon"></i> -->
                 <div class='ui header blue'>Read More...</div>

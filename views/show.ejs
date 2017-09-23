@@ -1,0 +1,16 @@
+<% include partials/header %>
+
+<div class="ui text container segment">
+  <div class="ui huge header"><%= post.title %></div>      
+  <span class="meta"><%= post.created.toDateString() %></span>
+  <div class="ui top attached ">
+    <div class="item">
+      <img class="ui centered rounded image" src="<%= post.image %>" alt="">
+      <div class="content">
+        <p class="description"><%= post.body %></p>
+      </div>
+    </div>
+  </div>  
+</div>
+
+<% include partials/footer %>
