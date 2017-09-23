@@ -2,6 +2,15 @@
     margin-top: 7em;
 }
 
-i.icon {ui
+i.icon {
   font-size: 2.5em;
+}
+
+.ui.card {
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }

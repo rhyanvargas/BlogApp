@@ -1,14 +1,28 @@
 <% include partials/header %>
 
-<h1>LIST OF ALL POSTS HERE</h1>
+  <div class="ui header huge centered"><h1>Rhyan's Blog</h1></div>
+    <div class="ui cards">
+      <% posts.forEach( (post)=> { %>
 
-<% blogs.forEach(function(post){ %>
- <div>
-  <h2> <%= post.title %> </h2>
-  <small> <%= post.created %> </small>
-  <img src="<%= post.image %>">
-  <p> <%= post.body%> </p>
-</div>
-<% });%>
+        <div class="ui card ">
+          <div class="content">
+            <div class="image">
+              <img src="<%= post.image %>" alt="">
+            </div>
+            <h2 class="header"><%= post.title %></h2>
+            <small class="meta"><%= post.created %></small>
+            <p class="description"><%= post.body %></p>
+            
+          </div>
+          <a href="/blogs">
+              <div class="ui bottom attached button">
+                <!-- <i class="add icon"></i> -->
+                <div class='ui header blue'>Read More...</div>
+              </div>
+            </a>
+        </div>
+
+      <%});%>
+    </div>
 
 <% include partials/footer %>
