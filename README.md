@@ -34,4 +34,8 @@ SHOW      /campgrounds/:id    GET        Displays info about one campground
 SyntaxError: missing ) after argument list in /Volumes/Rhyan_Storage_Internal/my-storage/rhyanvargas/Google Drive/Web-Projects/webdevbootcamp_coltSteele/BlogApp/views/show.ejs while compiling ejs
 ```
 
-- **Using `<%-` actually evaluates the data passed in between** ...I used this to pass in `post.body` in order to allow users to add code when creating their post. *SECURITY: I `sanitize` the inputs in order to prevent `scripts` injection. 
+- **Using `<%-` actually evaluates the data passed in between** ...I used this to pass in `post.body` in order to allow users to add code when creating their post. *SECURITY: I `sanitize` the inputs in order to prevent `scripts` injection.*
+
+- **`PUT` methods are not supported by HTML:** so I installed `method-override` package to be able to use PUT methods in edit template.
+
+
