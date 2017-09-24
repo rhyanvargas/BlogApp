@@ -29,6 +29,11 @@ var Blog = mongoose.model('Blog', blogSchema);
 
 //************  ROUTES
 
+// HOME REDIRECT TO BLOGS
+app.get('/', (req,res) =>{
+  res.redirect('/blogs');
+});
+
 // DISPLAY ALL BLOGS
 app.get('/blogs', (req,res) =>{
   Blog.find({}, (err, posts) =>{
