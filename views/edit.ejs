@@ -16,8 +16,13 @@
       <textarea type="body" name="post[body]"><%= post.body %></textarea>
     </div>
 
-    <button class="ui violet basic big button" type="submit">Create New Post</button>
+    <button class="ui violet basic big button " type="submit">Update Post</button>
+    <a class="ui basic button inline" href="/blogs/<%=post._id%>">
+      <i class="cancel icon"></i> 
+      Cancel
+    </a>
   </form>
+  
 </div>
 
 

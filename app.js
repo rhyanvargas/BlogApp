@@ -1,6 +1,7 @@
 // UTILITES
 var bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
+    sanitizer = require('express-sanitizer'),
     mongoose = require('mongoose'),
     express = require('express'),
     app = express();
@@ -10,6 +11,8 @@ mongoose.connect('mongodb://localhost/blog_app',{useMongoClient: true});
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:true}));
+// expresss-sanitizer must go right after bodyParser
+app.use(sanitizer());
 app.use(methodOverride('_method'));
 
 
@@ -37,15 +40,18 @@ app.get('/blogs', (req,res) =>{
   });
 });
 
-// CREATE
+// CREATE POST
 app.post('/blogs', (req,res)=> {
-  // create a blog object
+  // 1. Upon submission: sanitize the body to prevent javascript code from executing...
+  req.body.post.body = req.sanitize(req.body.post.body)
+
+  // 2. Then create a blog object with the cleaned content
   Blog.create(req.body.post, (err,newBlog) =>{
     if (err) {
       console.log(err);
       res.render('new');
     } else {
-      // redirect to blogs route
+        // 3. redirect to blogs route
         res.redirect('/blogs');
     };
   });
@@ -83,11 +89,15 @@ app.get('/blogs/:id/edit', (req,res)=>{
 
 // UPDATE ROUTE
 app.put('/blogs/:id', (req,res)=>{
-  // Find and Update post: model.FindByIdAndUpdate(id, newData, callback)
+  // 1. Sanitize the body before submitting
+  req.body.blog.body = req.sanitize(req.body.blog.body);
+
+  // 2.) Find and Update post: model.FindByIdAndUpdate(id, newData, callback)
   Blog.findByIdAndUpdate(req.params.id, req.body.post, (err, updatedPost)=>{
     if (err) {
       res.redirect('/blogs');
     } else {
+      // 3. Redirect
       res.redirect('/blogs/' + req.params.id)
     };
   });

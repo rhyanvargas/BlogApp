@@ -2,7 +2,7 @@
     margin-top: 7em;
 }
 
-i.icon {
+i.icon.logo {
   font-size: 2.5em;
 }
 
@@ -10,15 +10,15 @@ i.icon {
   width: 100%;
 }
 
-img {
+/*img {
   width: 100%;
   height: auto;
-}
+}*/
 
-form.inline {
+.inline {
   display: inline;
 }
 
-.left.floated.button {
+form.left.floated.button {
 float: none;
 }

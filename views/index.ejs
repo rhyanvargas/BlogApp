@@ -1,28 +1,35 @@
 <% include partials/header %>
 
-  <div class="ui header huge centered"><h1>Rhyan's Blog</h1> </div>
-    <div class="ui cards">
+  <div class="ui header huge centered">
+    <h1>Rhyan's Blog</h1> 
+  </div>
+  <div class="ui top attached segment">
+    <div class="ui divided items">
+
       <% posts.forEach( (post)=> { %>
 
-        <div class="ui card ">
-          <div class="content">
-            <div class="image">
-              <img src="<%= post.image %>" alt="">
-            </div>
-            <h2 class="header"><%= post.title %></h2>
-            <small class="meta"><%= post.created %></small>
-            <p class="description"><%= post.body.substring(0,100) %>...</p>
-            
+        <div class="item">
+          <div class="image">
+            <img src="<%= post.image %>" alt="">
           </div>
-          <a href="/blogs/<%= post._id%>">
-              <div class="ui bottom attached button">
-                <!-- <i class="add icon"></i> -->
-                <div class='ui header blue'>Read More...</div>
-              </div>
-            </a>
+          <div class="content">
+            <a class="header" href="/blogs/<%=post._id%>"><%= post.title %></a>
+            <div class="meta">
+              <span><%= post.created.toDateString() %></span>
+            </div>
+            <div class="description">
+              <p><%- post.body.substring(0,100) %>...</p>
+            </div>
+            <div class="ui extra"> 
+              <a href="/blogs/<%= post._id%>" class="ui right floated violet button">
+                Read More...  
+                <i class="ui right chevron icon"></i>
+              </a>
+            </div>
+          </div>
         </div>
-
       <%});%>
     </div>
+  </div>
 
 <% include partials/footer %>

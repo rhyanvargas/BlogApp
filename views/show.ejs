@@ -1,20 +1,35 @@
 <% include partials/header %>
-
-<div class="ui text container segment">
-  <div class="ui huge header"><%= post.title %></div>      
-  <span class="meta"><%= post.created.toDateString() %></span>
+<div class="ui text container segmented ">
+  <!-- HEADER -->
+  <div class="middle aligned content">
+    <div class="ui huge header">
+      <h1 class="inline"><%= post.title %></h1>
+      <a href="/blogs/<%=post._id%>/edit"><i class="edit icon"></i></a>
+    </div>
+  </div>
+  <!-- MAIN BODY -->
   <div class="ui top attached ">
     <div class="item">
-      <img class="ui centered rounded image" src="<%= post.image %>" alt="">
+      <div class="image">
+        <img class="ui centered rounded image" src="<%= post.image %>" alt="">
+      </div>
       <div class="content">
-        <p class="description"><%- post.body %></p>
+        <div class="meta">
+          <span><%= post.created.toDateString() %></span>
+        </div>
+        <div class="description">
+          <p><%- post.body %></p>
+        </div>
       </div>
     </div>
   </div> 
-  <a class="ui primary basic button floated left " href="/blogs/<%=post._id%>/edit" >Edit</a>
-  <form class="inline " action="/blogs/<%=post._id%>?_method=DELETE" method="POST">
-    <button class="ui negative basic button right floated" type="submit">Delete</button>
-  </form>
+  <!-- BUTTONS -->
+  <div class="extra ">
+    <a href="/blogs/<%=post._id%>/edit"><button class="ui primary basic button left floated"><i class="edit icon"></i> Edit</button></a>
+    <form class="" action="/blogs/<%=post._id%>?_method=DELETE" method="POST">
+      <button class="ui negative basic button right floated " type="submit"><i class="trash icon"></i>Delete</button>
+    </form>
+  </div>
 </div>
 
 <% include partials/footer %>
