@@ -10,7 +10,11 @@
         <p class="description"><%- post.body %></p>
       </div>
     </div>
-  </div>  
+  </div> 
+  <a class="ui primary basic button floated left " href="/blogs/<%=post._id%>/edit" >Edit</a>
+  <form class="inline " action="/blogs/<%=post._id%>?_method=DELETE" method="POST">
+    <button class="ui negative basic button right floated" type="submit">Delete</button>
+  </form>
 </div>
 
 <% include partials/footer %>

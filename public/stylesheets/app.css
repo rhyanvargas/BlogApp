@@ -14,3 +14,11 @@ img {
   width: 100%;
   height: auto;
 }
+
+form.inline {
+  display: inline;
+}
+
+.left.floated.button {
+float: none;
+}

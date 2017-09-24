@@ -84,13 +84,27 @@ app.get('/blogs/:id/edit', (req,res)=>{
 // UPDATE ROUTE
 app.put('/blogs/:id', (req,res)=>{
   // Find and Update post: model.FindByIdAndUpdate(id, newData, callback)
-  Blog.findByIdAndUpdate(req.params.id,req.body.post, (err, updatedPost)=>{
+  Blog.findByIdAndUpdate(req.params.id, req.body.post, (err, updatedPost)=>{
     if (err) {
       res.redirect('/blogs');
     } else {
       res.redirect('/blogs/' + req.params.id)
     };
   });
+});
+
+// DELETE ROUTE
+app.delete('/blogs/:id', (req,res)=>{
+  // 1. Destroy Blog
+  Blog.findByIdAndRemove(req.params.id, (err, deletedPost)=>{
+    if (err) {
+      res.redirect('/blogs');
+    } else {
+      // 2. Redirect somewhere
+      res.redirect('/blogs')
+    }
+  })
+
 });
 
 // SERVER
