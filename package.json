@@ -4,7 +4,8 @@
   "description": "simple blog express app using MEN stack (mongoDB, Express, Node) with RESTful routing",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "Rhyan Vargas",
   "license": "ISC",
@@ -16,5 +17,8 @@
     "method-override": "^2.3.9",
     "mongoose": "^4.11.11",
     "nodemon": "^1.12.1"
+  },
+  "engines": {
+    "node": "6.9.1"
   }
 }
