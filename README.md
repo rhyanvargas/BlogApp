@@ -1,3 +1,12 @@
+#SETUP (Mac OSX)
+=============
+1. In terminal, type `git clone https://github.com/rhyanvargas/BlogApp.git`
+2. In terminal, type `npm install` (install dependencies locally inside project)
+3. install mongodb Instructions here: https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+4. In terminal, type `mongod` (start mongo local database)
+5. In terminal, type `node app.js` (by default, it spins up local server on http://localhost:3000/)
+
+
 #TECH STACK
 =============
 **Databse: mongoDB**
