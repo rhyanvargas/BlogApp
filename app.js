@@ -69,7 +69,7 @@ app.get('/blogs/new', (req,res) =>{
 
 // SHOW POST
 app.get('/blogs/:id', (req,res)=>{
-  // 1. Take in the id 
+  // 1. Take in the id
   // 2. Find the corresponding post
   // 3. Render the show template for that post
   Blog.findById(req.params.id, (err,foundPost)=>{
@@ -95,7 +95,7 @@ app.get('/blogs/:id/edit', (req,res)=>{
 // UPDATE ROUTE
 app.put('/blogs/:id', (req,res)=>{
   // 1. Sanitize the body before submitting
-  req.body.blog.body = req.sanitize(req.body.blog.body);
+  req.body.post.body = req.sanitize(req.body.post.body);
 
   // 2.) Find and Update post: model.FindByIdAndUpdate(id, newData, callback)
   Blog.findByIdAndUpdate(req.params.id, req.body.post, (err, updatedPost)=>{
@@ -124,5 +124,5 @@ app.delete('/blogs/:id', (req,res)=>{
 
 // SERVER
 app.listen(3000, function(){
-  console.log('SERVER RUNNING http://localhost:3000...');
+  console.log('SERVER RUNNING http://localhost:3000/');
 });
