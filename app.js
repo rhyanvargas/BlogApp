@@ -122,7 +122,7 @@ app.delete('/blogs/:id', (req,res)=>{
 
 });
 
-// SERVER
-app.listen(3000, function(){
-  console.log('SERVER RUNNING http://localhost:3000/');
+// SERVER - dynamically listen for the port that heroku defines, or port 3000
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
