@@ -7,7 +7,7 @@ var bodyParser = require('body-parser'),
     app = express();
 
 // APP CONFIG
-mongoose.connect('mongodb://localhost/blog_app',{useMongoClient: true});
+mongoose.connect('mongodb://heroku_t2g3rfsd:c84ft0ee4uu2iq9v9403er3itf@ds111565.mlab.com:11565/heroku_t2g3rfsd',{useMongoClient: true});
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:true}));
