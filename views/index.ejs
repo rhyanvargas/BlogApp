@@ -18,7 +18,9 @@
               <span><%= post.created.toDateString() %></span>
             </div>
             <div class="description">
-              <p><%- post.body.substring(0,100) %>...</p>
+              <p>
+                  <%- post.body %>
+              </p>
             </div>
             <div class="ui extra"> 
               <a href="/blogs/<%= post._id%>" class="ui right floated violet button">
